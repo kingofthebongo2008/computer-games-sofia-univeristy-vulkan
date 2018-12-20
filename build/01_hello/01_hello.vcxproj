@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CBECFBF5-B44B-4E67-9295-A867FADAC41C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>vulkan</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="..\vs_default.props" />
+  <Import Project="..\cpp_default.props" />
+  <Import Project="..\vulkan.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <IncludePath>$(IncludePath)</IncludePath>
+    <IntDir>$(SolutionDir)..\..\tmp\$(Platform)\$(ProjectName)\$(Configuration)\stub\</IntDir>
+    <OutDir>$(SolutionDir)..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)_x64_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <IncludePath>$(IncludePath)</IncludePath>
+    <IntDir>$(SolutionDir)..\..\tmp\$(Platform)\$(ProjectName)\$(Configuration)\stub\</IntDir>
+    <OutDir>$(SolutionDir)..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)_x64_r</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" />
+  <Import Project="01_hello_h.msbuild" />
+  <Import Project="01_hello_cpp.msbuild" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
